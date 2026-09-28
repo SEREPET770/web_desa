@@ -104,11 +104,15 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/main
 .login-alert {
     background: #fbe9e7;
     border-left: 3px solid #c44d3c;
     color: #8b3025;
     font-size: 12px;
+<<<<<<< HEAD
 =======
 .login-error {
     background: #fff0ed;
@@ -116,6 +120,8 @@
     color: #a74435;
     font-size: 11px;
 >>>>>>> 0df6159 (Update project)
+=======
+>>>>>>> origin/main
     margin-bottom: 18px;
     padding: 11px 13px;
 }
