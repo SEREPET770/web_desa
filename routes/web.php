@@ -24,6 +24,9 @@ Route::get('/dashboard/{role?}', function (?string $role = null) use ($dashboard
         return redirect()->route('login');
     }
 
+    // Samakan format role database dengan format role dashboard
+    $sessionRole = str_replace('_', '-', $sessionRole);
+
     if ($role !== null && $role !== $sessionRole) {
         abort(403, 'Anda tidak memiliki akses ke dashboard ini.');
     }

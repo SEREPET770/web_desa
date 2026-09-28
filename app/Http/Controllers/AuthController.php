@@ -18,15 +18,17 @@ class AuthController extends Controller
             'password.required' => 'Kata sandi wajib diisi.',
         ]);
 
-        if (!Auth::attempt($credentials, $request->boolean('remember'))) {
+        $user = \App\Models\User::where('username', $credentials['username'])->first();
+
+        if (!$user || $user->password !== $credentials['password']) {
             return back()
                 ->withErrors(['username' => 'Username atau kata sandi tidak sesuai.'])
                 ->onlyInput('username');
         }
 
-        $request->session()->regenerate();
+        Auth::login($user, $request->boolean('remember'));
 
-        $user = Auth::user();
+        $request->session()->regenerate();
 
         $dashboardRole = $user->role ?? null;
 
