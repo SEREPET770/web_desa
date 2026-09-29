@@ -36,7 +36,8 @@ class AuthController extends Controller
             $request->session()->put('dashboard_role', $dashboardRole);
         }
 
-        return redirect()->route('dashboard');
+        // Diperbaiki: Menyertakan parameter role agar sesuai dengan rute dashboard/{role?}
+        return redirect()->route('dashboard', ['role' => $user->role]);
     }
 
     public function destroy(Request $request): RedirectResponse

@@ -4,9 +4,9 @@ use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 $dashboardRoles = [
-    'super-admin' => ['label' => 'Super Admin', 'initials' => 'SA', 'canEdit' => true],
+    'super_admin' => ['label' => 'Super Admin', 'initials' => 'SA', 'canEdit' => true],
     'admin' => ['label' => 'Admin', 'initials' => 'AD', 'canEdit' => true],
-    'kepala-desa' => ['label' => 'Kepala Desa', 'initials' => 'KD', 'canEdit' => false],
+    'kepala_desa' => ['label' => 'Kepala Desa', 'initials' => 'KD', 'canEdit' => false],
 ];
 
 Route::get('/', function () {
